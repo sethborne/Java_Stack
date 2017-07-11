@@ -1,5 +1,3 @@
-import com.sun.java_cup.internal.runtime.virtual_parse_stack;
-
 class VehicleTest {
     public static void main(String[] args){
         Vehicle bike = new Vehicle();
