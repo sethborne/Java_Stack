@@ -33,7 +33,7 @@ public class GorillaTest {
 		String gorillaEatBan2 = gorillaFirst.eatBananas();
 		System.out.println(gorillaEatBan2);
 		System.out.println(printCurrentGorillaEnergyLevel);
-		
+		//climb 1
 		String gorillaClimb1 = gorillaFirst.climb();
 		System.out.println(gorillaClimb1);
 		System.out.println(printCurrentGorillaEnergyLevel);
