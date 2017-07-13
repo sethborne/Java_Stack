@@ -1,0 +1,128 @@
+<? xml version="1.0" encoding="UTF-8">
+
+<restaurantMenu>
+    <breakfastSection>
+        <item category="pancakesOrFrenchToast">
+            <name>1 Pancake or French Toast</name>
+            <description>1 Pancake or French Toast</description>
+            <price>$2.99</price>
+        </item>
+        <item category="pancakesOrFrenchToast">
+            <name>2 Pancakes or French Toast</name>
+            <description>2 Pancakes or French Toast</description>
+            <price>$3.99</price>
+        </item>
+        <item category="pancakesOrFrenchToast">
+            <name>3 Pancakes or French Toast</name>
+            <description>3 Pancakes or French Toast</description>
+            <price>$4.99</price>
+        </item>
+        <item category="waffle">
+            <name>Grandmas Homestyle Waffle</name>
+            <description>A waffle like your Grandma used to make, you know, when people would actually cook.</description>
+            <price>$3.99</price>
+        </item>
+        <item category="waffle">
+            <name>Belgian Waffle</name>
+            <description>A Belgian waffle</description>
+            <price>$5.99</price>
+        </item>
+    </breakfastSection>
+    
+    <lunchSection>
+        <item category="salads">
+            <name>Chicken Salad</name>
+            <description>A salad with chicken</description>
+            <price>$10.99</price>
+        </item>
+        <item category="salads">
+            <name>Tuna Salad</name>
+            <description>A salad with Tuna</description>
+            <price>$10.99</price>
+        </item>
+        <item category="sandwiches">
+            <name>Chicken Sandwich</name>
+            <description>A sandwich with chicken</description>
+            <price>$12.99</price>
+        </item>
+        <item category="sandwiches">
+            <name>MLT</name>
+            <description>A Mutton Lettuce and Tomato Sandwich - where the mutton is nice and lean and the tomato is ripe. They’re so perky, I love that</description>
+            <price>$12.99</price>
+        </item>
+        <item category="sandwiches">
+            <name>Pastrami Sandwich</name>
+            <description>A sandwich made with pastrami</description>
+            <price>$13.99</price>
+        </item>
+        <item category="burgers">
+            <name>Plain Burger</name>
+            <description>A plain burger</description>
+            <price>$9.99</price>
+        </item>
+        <item category="burgers">
+            <name>Cheeseburger</name>
+            <description>A cheeseburger</description>
+            <price>$9.99</price>
+        </item>
+        <item category="burgers">
+            <name>Bacon Burger</name>
+            <description>A plain burger with bacon</description>
+            <price>$9.99</price>
+        </item>
+    </lunchSection>
+    
+    <dinnerSection>
+        <item category="appetizer">
+            <name>Octopus Balls</name>
+            <description>Balls for of lots of octopi greatness!  A favorite dish of Robin Williams.</description>
+            <price>$6.99</price>
+        </item>
+        <item category="appetizer">
+            <name>Octopus Balls</name>
+            <description>Balls for of lots of octopi greatness!  A favorite dish of Robin Williams.</description>
+            <price>$6.99</price>
+        </item>
+        <item category="entree">
+            <name>Chicken Parmigiana</name>
+            <description>Chicken cutlet topped with provolone and marinara served with pasta or potato and vegetable</description>
+            <price>$14.99</price>
+        </item>
+        <item category="entree">
+            <name>10 oz Ribeye</name>
+            <description>Grilled to order ribeye, cooked to perfection.  Served with a fully loaded baked potato and stick of butter.</description>
+            <price>$14.99</price>
+        </item>
+        <item category="entree">
+            <name>Baked Salmon</name>
+            <description>A Baked Salmon steak, served with potato and vegetable</description>
+            <price>$14.99</price>
+        </item>
+    </dinnerSection>
+    
+    <beverageSection>
+        <item category="beverage">
+            <name>Coca-Cola</name>
+            <description>A fizzy cola soda</description>
+            <price>$1.99</price>
+        </item>
+        <item category="beverage">
+            <name>Orange Juice</name>
+            <description>A juice made with oranges</description>
+            <price>$2.99</price>
+        </item>
+        <item category="beverage">
+            <name>Chocolate Milk</name>
+            <description>Favorite milk of adults, of which, 7% of adult Americans believe comes from brown cows.  I know right, WTF? </description>
+            <price>$1.99</price>
+        </item>
+    </beverageSection>
+
+</restaurantMenu>
+
+
+
+
+
+
+
