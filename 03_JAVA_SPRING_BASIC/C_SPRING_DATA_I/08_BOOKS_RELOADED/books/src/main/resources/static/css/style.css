@@ -1,0 +1,524 @@
+* {
+    /*padding: 0px;*/
+    /*margin: 0px;*/
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#mainContainer {
+    padding: 0;
+    margin: 0;
+}
+
+#mainContainer #head,
+#mainContainer #body {
+    margin: 20px 50px 0px 50px;
+}
+
+#mainContainer #head .left {
+    width: 80%;
+    /*display: inline;*/
+    float: left;
+    /*padding: 0px 20px 0px 20px;*/
+}
+
+
+/*#mainContainer #body #body-top .right*/
+
+#mainContainer #head .right {
+    width: 20%;
+    /*display: inline-block;*/
+    /*margin-left: auto;*/
+    /*margin-right: 0;*/
+    /*margin: 0px 0px 0px 425px;*/
+    vertical-align: top;
+    float: right;
+    /*padding: 0px 0px 0px 0px;*/
+    text-align: right;
+}
+
+#mainContainer #head .right ul li {
+    display: inline;
+}
+
+#mainContainer hr {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#mainContainer .errors {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+#mainContainer #body #body-top .left {
+    width: 47%;
+}
+
+#mainContainer #body #body-top .right {
+    width: 47%;
+    line-height: 65px;
+    vertical-align: top;
+    /*margin: 0px 0px 0px 525px;*/
+    text-align: right;
+}
+
+
+/*#mainContainer #head .right ul*/
+
+#mainContainer #head .left ul,
+#mainContainer #head .right ul {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    list-style-type: none;
+    display: inline;
+    /*text-decoration-style: none;*/
+}
+
+
+/*#mainContainer #head .right ul li*/
+
+#mainContainer #head .left ul li,
+#mainContainer #head .right ul li {
+    display: inline-block;
+    padding: 0px 20px 0px 0px;
+    /*text-decoration-style: none;*/
+}
+
+#mainContainer #head .left ul li h4,
+#mainContainer #head .left ul li h5,
+#mainContainer #head .right ul li h4,
+#mainContainer #head .right ul li h5,
+#mainContainer #body .left h2 {
+    display: inline-block;
+    padding: 0px 0px 0px 10px;
+    text-decoration: none;
+    /*margin-left: auto;
+  margin-right: 0;*/
+}
+
+
+/*#mainContainer #head .right ul li h5 {
+  text-align: right;
+}*/
+
+
+/*
+#mainContainer #head .right ul {
+  text-decoration: none;
+  list-style-type: none;
+}*/
+
+#mainContainer #body .left {
+    width: 48%;
+    display: inline-block;
+    padding: 0px 20px 0px 0px;
+    /*margin: 0px 0px 0px 0px;*/
+}
+
+#mainContainer #body .right {
+    width: 48%;
+    display: inline-block;
+    /*vertical-align: top;*/
+    vertical-align: top;
+    padding: 0px 0px 0px 20px;
+    /*margin: 0px 0px 0px 0px;*/
+}
+
+#mainContainer #body #bot .left {
+    width: 17.5%;
+    display: inline-block;
+    padding: 0px 20px 0px 0px;
+    /*margin: 0px 0px 0px 0px;*/
+}
+
+#mainContainer #body #bot .right {
+    width: 77.5%;
+    display: inline-block;
+    /*vertical-align: top;*/
+    vertical-align: top;
+    /*margin: 0px 0px 0px 0px;*/
+}
+
+#mainContainer #body #bot .right .r-top {
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    border: 1px black solid;
+}
+
+#mainContainer #body #bot .right .r-bot .r-bot-left {
+    width: 28%;
+    display: inline-block;
+    /*vertical-align: top;*/
+    /*vertical-align: top;*/
+    /*padding: 0px 0px 0px 20px;*/
+    /*margin: 0px 0px 0px 0px;*/
+}
+
+#mainContainer #body #bot .right .r-bot .r-bot-right {
+    width: 68%;
+    display: inline-block;
+    /*vertical-align: top;*/
+    /*vertical-align: top;*/
+    /*padding: 0px 0px 0px 20px;*/
+    /*margin: 0px 0px 0px 0px;*/
+}
+
+#mainContainer #body #bot .right .r-bot .r-bot-left h5 a {
+    display: inline-block;
+}
+
+#mainContainer #body #bot .right .r-bot .r-bot-right h5 a {
+    display: inline-block;
+}
+
+#mainContainer #body .center {
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#mainContainer .butInputSubmit,
+#mainContainer .butInputSubmitGreen {
+    margin: 40px 0px 0px 0px;
+}
+
+#mainContainer #body #body-top .butInputSubmit,
+#mainContainer #body #body-top .butInputSubmitGreen {
+    margin: 0px 0px 0px 0px;
+}
+
+#mainContainer .butInputSubmit,
+#mainContainer .butInputSubmit:hover {
+    /*width: 20%;*/
+    /*height: 30px;*/
+    /*display: block;
+  margin-left: auto;
+  margin-right: 0;*/
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 10pt;
+}
+
+#mainContainer .butInputSubmitGreen {
+    /*width: 20%;*/
+    /*height: 30px;*/
+    /*display: block;
+  margin-left: auto;
+  margin-right: 0;*/
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    background: none;
+    border: none;
+    border: 1px solid green;
+    color: white;
+    background: green;
+    font-size: 10pt;
+    /*display: block;
+  margin-left: auto;
+  margin-right: 0;*/
+}
+
+#mainContainer .butInputSubmitBlue {
+    /*width: 20%;*/
+    /*height: 30px;*/
+    /*display: block;
+  margin-left: auto;
+  margin-right: 0;*/
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    background: none;
+    border: none;
+    border: 1px solid blue;
+    color: white;
+    background: blue;
+    font-size: 10pt;
+}
+
+#mainContainer .butInputSubmitRed {
+    /*width: 20%;*/
+    /*height: 30px;*/
+    /*display: block;
+  margin-left: auto;
+  margin-right: 0;*/
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    background: none;
+    border: none;
+    border: 1px solid red;
+    color: white;
+    background: red;
+    font-size: 10pt;
+}
+
+#mainContainer .butInputSubmitHovGreen {
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background: none;
+    border: none;
+    border: 1px solid green;
+    color: green;
+    margin: 0px 10px 0px 0px;
+    padding: 5px 10px;
+}
+
+#mainContainer .butInputSubmitHovRed {
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: red;
+    border: 1.5px solid red;
+    margin: 0px 10px 0px 0px;
+    padding: 5px 10px;
+}
+
+#mainContainer .butInputSubmitGreen:hover {
+    border: 1px solid green;
+    color: green;
+    background: white;
+}
+
+#mainContainer .butInputSubmitBlue:hover {
+    border: 1px solid blue;
+    color: blue;
+    background: rgba(125, 125, 125, 0);
+}
+
+#mainContainer .butInputSubmitHovRed:hover {
+    border: 1px solid red;
+    color: white;
+    background: red;
+}
+
+#mainContainer .butInputSubmitHovGreen:hover {
+    border: 1px solid green;
+    color: white;
+    background: green;
+}
+
+#mainContainer #body #index-body1 {
+    background-color: rgba(125, 125, 125, .75);
+    padding: 30px 40px 40px 40px;
+    width: 93.5%;
+    vertical-align: top;
+}
+
+#mainContainer #body .inputText,
+#mainContainer #body #bot .left .inputText {
+    width: 97.5%;
+    /*height: 24px;*/
+    /*width: 100%;*/
+}
+
+#mainContainer .h2label {
+    display: inline-block;
+    margin: 5px 0px 5px 0px;
+}
+
+#mainContainer #body .h2Space {
+    display: inline-block;
+    padding-left: 15px;
+    font-weight: normal;
+    margin: 5px 0px 15px 0px;
+    /*color: green;*/
+}
+
+#mainContainer label {
+    /*display: inline-block;*/
+    padding: 5px 0px 5px 0px;
+}
+
+#mainContainer .h4label {
+    display: inline-block;
+    margin: 5px 0px 5px 0px;
+}
+
+#mainContainer .h4Space {
+    display: inline-block;
+    padding-left: 10px;
+    font-weight: normal;
+    margin: 5px 0px 5px 0px;
+}
+
+#mainContainer .h4Input {
+    display: inline-block;
+    margin-left: 10px;
+    /*font-weight: normal;
+  margin: 5px 0px 5px 0px;*/
+    font-size: 10pt;
+    padding: 5px 5px 5px 10px;
+    margin: 10px 0px 10px 15px;
+    height: 22px;
+    width: 100%;
+}
+
+#mainContainer .madlibs {
+    display: inline-block;
+    padding-left: 10px;
+    /*font-weight: normal;
+  margin: 5px 0px 5px 0px;*/
+    font-size: 18pt;
+    padding: 5px 5px 0px 5px;
+    color: red;
+}
+
+#mainContainer p {
+    color: black;
+    /*font-size: 16pt;*/
+}
+
+#mainContainer #body .inputText,
+#mainContainer #body .inputSelect,
+#mainContainer #body #top .ta_message {
+    /*width: 100%;*/
+    padding: 5px 10px 5px 10px;
+    font-size: 12pt;
+    color: rgba(55, 55, 55, 1);
+}
+
+#mainContainer #body .inputSelect {
+    width: 50%;
+    display: block;
+}
+
+#mainContainer #body #top .textAreaIdea,
+#mainContainer #body #bot .textAreaIdea,
+#mainContainer #body #top #topic .textAreaIdea {
+    width: 97.5%;
+    display: block;
+    font-size: 12pt;
+    padding: 5px 10px 5px 10px;
+    resize: none;
+}
+
+#mainContainer #body #top .project {
+    padding: 0px 20px 0px 20px;
+}
+
+#mainContainer #body #answer .textAreaIdea {
+    width: 97.5%;
+    display: block;
+    font-size: 12pt;
+    padding: 5px 10px 5px 10px;
+    resize: none;
+    background: rgba(225, 225, 225, .4);
+}
+
+#mainContainer #body #topic {
+    margin: 0px 0px 0px 50px;
+    /*background:rgba(225, 225, 225, .8);*/
+}
+
+#mainContainer #body .postText {
+    margin: 0px 0px 0px 50px;
+    /*background:rgba(225, 225, 225, .8);*/
+}
+
+#mainContainer #body #answer .left {
+    display: inline-block;
+    width: 62.5%;
+}
+
+#mainContainer #body #answer .right {
+    display: inline-block;
+    width: 30%;
+}
+
+#mainContainer #body #answer ul {
+    display: inline;
+}
+
+#mainContainer #body #answer ul li {
+    display: inline;
+}
+
+#mainContainer #body .answerComment {
+    margin: 0px 0px 0px 100px;
+    /*background:rgba(225, 225, 225, .8);*/
+}
+
+#mainContainer .errors {
+    color: red;
+}
+
+#mainContainer #body .left form span {
+    display: block;
+    padding: 0px 0px 10px 0px;
+}
+
+#mainContainer table {
+    width: 100%;
+    border: none;
+}
+
+
+/*#mainContainer #body #body-top .small {*/
+
+#mainContainer #body #top .small {
+    width: 50%;
+    border: none;
+}
+
+#mainContainer #body #top img {
+    width: 100%;
+    height: 100%;
+}
+
+#mainContainer #body #top {
+    /*width: 80%;*/
+    /*height: 80%;*/
+    margin: 30px 25px 0px 25px;
+    padding: 50px 50px 50px 50px;
+    border: 1px solid black;
+}
+
+
+#mainContainer table thead {
+    background-color: rgba(125, 125, 125, .75);
+}
+
+#mainContainer table thead tr {
+    height: 40px;
+}
+
+#mainContainer table tbody tr {
+    height: 40px;
+}
+
+#mainContainer table tbody tr:nth-child(even) {
+    background: rgba(220, 220, 220, .6);
+}
+
+#mainContainer table tbody tr:nth-child(odd) {
+    background: rgba(255, 255, 255, .6);
+}
+
+#mainContainer table tbody tr td {
+    padding: 5px 25px 5px 25px;
+    font-size: 10pt;
+}
+
+#mainContainer #body table tbody tr .center {
+    text-align: center;
+}
+
+#mainContainer #body #index-body2 .thirtythree {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+}
