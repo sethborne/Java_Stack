@@ -43,14 +43,15 @@
             		<h1>New Person</h1>
 	                <form:form method="POST" action="/persons/add" modelAttribute="person">
 	                    <!--name, creator version-->
-	                    <form:label path="firstName">First Name
+	                    <form:label path="firstName">First Name</form:label>
 	                        <form:errors path="firstName" class="errors"/>
 	                        <form:input path="firstName" class="inputTextLeft" type="text" placeholder="Please Enter Your First Name"/>
-	                    </form:label><br>
-	                    <form:label path="lastName">Last Name
+	                    
+	                    <br>
+	                    <form:label path="lastName">Last Name</form:label>
 	                        <form:errors path="lastName" class="errors"/>
 	                        <form:input path="lastName" class="inputTextLeft" type="text" placeholder="Please Enter Your Last Name"/>
-	                    </form:label><br>
+	                    <br>
 	                    <div class="btn-left">
 	                    	<input class='btnSubmit btnGreen' type="submit" value="Create an Account"/>
 	                    </div>

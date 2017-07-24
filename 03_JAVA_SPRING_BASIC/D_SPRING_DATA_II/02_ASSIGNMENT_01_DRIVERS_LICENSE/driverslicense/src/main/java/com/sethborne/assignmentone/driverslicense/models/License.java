@@ -3,6 +3,7 @@ package com.sethborne.assignmentone.driverslicense.models;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="licenses")
@@ -21,13 +26,14 @@ public class License {
 	private Long id;
 	
 	private String number;
-	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Column(nullable = false)
 	private Date expirationDate;
 	
 	private String state;
-	
+	@CreationTimestamp
 	private Date createdAt;
-	
+	@UpdateTimestamp
 	private Date updatedAt;
 	
 	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
@@ -35,14 +41,15 @@ public class License {
 	private Person person;
 	
 	public License() {
+		this.number = String.format("%06d", this.id);
 	}
 	
-	public License(String number, Person person) {
-		this.number = number;
-		this.person = person;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
+//	public License(String number, Person person) {
+//		this.number = String.format("%06d", this.id);
+//		this.person = person;
+//		this.createdAt = createdAt;
+//		this.updatedAt = updatedAt;
+//	}
 
 	public Long getId() {
 		return id;

@@ -52,10 +52,15 @@ public class PersonsController {
 	}
 	
 	@RequestMapping("/persons/{id}")
-	public String findPersonById(Model model, @PathVariable("id") Long id) {
-		Person person = personService.findPersonById(id);
-		model.addAttribute("person", person);
-		return "showPerson.jsp";
+	public String getPersonById(Model model, @PathVariable("id") Long id) {
+		Person person = personService.getPersonById(id);
+		if(person == null) {
+			return "redirect:/";
+		}
+		else {
+			model.addAttribute("person", person);
+			return "showPerson.jsp";			
+		}
 	}
 	
 }

@@ -41,18 +41,24 @@
             	
             	<div class='left'>
             		<h1>New License</h1>
-	                <form:form method="POST" action="/licenses/add" modelAttribute="license">
+	                <form:form method="POST" action="/licenses/create" modelAttribute="license">
 	                    <!--name, creator version-->
                         <form:label path="person">Person
                             <form:errors path="person" class="errors"/>
-                            <form:select path="person" class="inputTextLeft" type="number">
+                            <form:select path="person" class="inputTextLeft" type="text">
                                 <form:option value="-1">----Persons Without Assigned Licenses----</form:option>
+                                <c:forEach items="${personsWithoutLicense}" var="personNoLic">
+                                	<form:option value="${personNoLic.id}"><c:out value="${personNoLic.firstName}"/> <c:out value="${personNoLic.lastName}"/></form:option>
+                                </c:forEach>
                             </form:select>
                         </form:label><br>
 	                    <form:label path="state">State
 	                        <form:errors path="state" class="errors"/>
 	                        <form:select path="state" class="inputTextLeft" type="text">
-                                <form:option value="-1">----Please Select A State----</form:option>
+                                <form:option value="None">----Please Select A State----</form:option>
+                                <c:forEach items="${allStates}" var="varState">
+                                	<form:option value="${varState.name}"><c:out value="${varState.abbreviation}"/> -- <c:out value="${varState.name}"/></form:option>
+                                </c:forEach>
                             </form:select>
 	                    </form:label><br>
                         <!--hidden field license number THIS IS number-->

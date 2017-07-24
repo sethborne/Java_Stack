@@ -24,7 +24,15 @@ public class PersonService {
 		return (List<Person>) personRepository.findAll();
 	}
 
-	public Person findPersonById(Long id) {
-		return personRepository.findOne(id);
+	public Person getPersonById(Long id) {
+//		return personRepository.findOne(id);
+		Person person = personRepository.getPersonById(id);
+		return person;
+	}
+	
+	//people without licenses
+	public List<Person> getPersonsWithoutLicense(){
+		List<Person> peopleWithNoLicense = personRepository.findAllByLicenseNull();
+		return peopleWithNoLicense;
 	}
 }

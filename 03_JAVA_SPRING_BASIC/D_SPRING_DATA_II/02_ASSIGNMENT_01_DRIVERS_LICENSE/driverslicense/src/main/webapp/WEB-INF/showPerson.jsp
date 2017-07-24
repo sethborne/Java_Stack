@@ -38,12 +38,19 @@
             <div id='top'>
                 <div class="dojoForm">
                     <h1>${person.firstName} ${person.lastName}</h1>
-                    <label><h4 style='text-align: left' class='h4label'>License Number:  </h4></label>
-                    <h4 class='h4Space'><c:out value=""/></h4><br>                    
-                    <label><h4 style='text-align: left' class='h4label'>State:  </h4></label>
-                    <h4 class='h4Space'><c:out value=""/></h4><br>                    
-                    <label><h4 style='text-align: left' class='h4label'>Expiration Date:  </h4></label>
-                    <h4 class='h4Space'><c:out value=""/></h4><br>                    
+                    <c:choose>
+	                    <c:when test="${ person.license.number != null }">
+	                    	<label><h4 style='text-align: left' class='h4label'>License Number:  ${person.license.number}</h4></label>
+	                    	<h4 class='h4Space'><c:out value=""/></h4><br>                    
+	                    	<label><h4 style='text-align: left' class='h4label'>State:  </h4></label>
+	                    	<h4 class='h4Space'><c:out value=""/></h4><br>                    
+	                    	<label><h4 style='text-align: left' class='h4label'>Expiration Date:  </h4></label>
+	                    	<h4 class='h4Space'><c:out value=""/></h4><br>
+	                    </c:when>
+	                    <c:otherwise>
+	                    	<label><h4 style='text-align: left' class='h4label'>There is no License Information for this Person.</h4></label>
+	                    </c:otherwise>
+	                </c:choose>               
                     
                     <!--<a href="/"><input class='butInputSubmitGreen' type='submit' value='Return'></a>-->
                 </div>
