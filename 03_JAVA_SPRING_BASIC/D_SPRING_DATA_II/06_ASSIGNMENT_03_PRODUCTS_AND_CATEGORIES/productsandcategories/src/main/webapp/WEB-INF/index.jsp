@@ -21,6 +21,7 @@
             <div class="right">
                 <ul>
                     <li><h4><a href="/products/all">Show All Products</a></h4></li>
+                    <li><h4><a href="/categorys/all">Show All Categorys</a></h4></li>
                     <li><h4><a href="/products/add">Create a New Product</a></h4></li>
                     <li><h4><a href="/categorys/add">Create a New Category</a></h4></li>  
                 </ul>
@@ -36,13 +37,20 @@
 				<div class='center'>
                 	<h1>Welcome to Products and Categories</h1>
                 	<br><br>
-                	<h2>Would you like to create a Product?</h2>
+                	<h2>Would you like to create a Product or Categoryj?</h2>
                 	<br>
-                	<div class="btn-center">
+                	
+                </div>
+                <div class="left">
+                	<div class="btn-right">
                     	<a href="/products/add"><input class='btnSubmit btnGreen' type='submit' value='Click Here to Create a Product'></a>
                     </div>
                 </div>
-
+				<div class="right">
+					<div class="btn-left">
+                    	<a href="/categorys/add"><input class='btnSubmit btnGreen' type='submit' value='Click Here to Create a Category'></a>
+                    </div>
+				</div>
             </div>
             <div id="bot">
 
