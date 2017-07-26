@@ -17,6 +17,16 @@ import com.sethborne.assignmentthree.productsandcategories.services.CategoryServ
 @Controller
 
 public class CategorysController {
+	
+	//COLOR CLASSES
+		public static final String RESET_ALL = "\u001B[0m";
+		public static final String RED_BKGRD = "\u001B[41m";
+		public static final String GREEN_BKGRD = "\u001B[42m";
+		public static final String CYAN_BKGRD = "\u001B[46m";
+		public static final String BLUE_BKGRD = "\u001B[44m";
+		public static final String PURPLE_BKGRD = "\u001B[45m";
+		public static final String WHITE_TXT = "\u001B[37m";
+		
 	private CategoryService categoryService;
 	public CategorysController(CategoryService categoryService){
 		this.categoryService = categoryService;

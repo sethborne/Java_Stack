@@ -15,12 +15,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sethborne.assignmentthree.productsandcategories.models.Category;
 import com.sethborne.assignmentthree.productsandcategories.models.Product;
+import com.sethborne.assignmentthree.productsandcategories.models.TextColor;
 import com.sethborne.assignmentthree.productsandcategories.services.CategoryService;
 import com.sethborne.assignmentthree.productsandcategories.services.ProductService;
 
 @Controller
 
 public class ProductsController {
+	
+	//COLOR CLASSES
+	public static final String RESET_ALL = "\u001B[0m";
+	public static final String RED_BKGRD = "\u001B[41m";
+	public static final String GREEN_BKGRD = "\u001B[42m";
+	public static final String CYAN_BKGRD = "\u001B[46m";
+	public static final String BLUE_BKGRD = "\u001B[44m";
+	public static final String PURPLE_BKGRD = "\u001B[45m";
+	public static final String WHITE_TXT = "\u001B[37m";
 	
 	private ProductService productService;
 	private CategoryService categoryService;
@@ -60,7 +70,7 @@ public class ProductsController {
 				String nameCheck = product.getName();
 				String descriptionCheck = product.getDescription();
 				float priceCheck = product.getPrice();
-				System.out.println("Post Successful.  Information Posted:  Name: " + nameCheck + " Description: " + descriptionCheck + " Price: " + priceCheck);
+				System.out.println(GREEN_BKGRD + WHITE_TXT + " Post Successful.  Information Posted:  Name: " + nameCheck + " Description: " + descriptionCheck + " Price: " + priceCheck + RESET_ALL);
 				
 				productService.createProduct(product);
 				
@@ -81,27 +91,39 @@ public class ProductsController {
 	
 	@RequestMapping("/products/{id}")
 	public String findProductById(Model model, @PathVariable("id") Long id) {
+		System.out.println(GREEN_BKGRD + WHITE_TXT + " @Controller - Sending to Service:  Id: " + id + RESET_ALL);
 		Product showOneProduct = productService.getProductById(id);
 		
+		// Check Object Coming Back - Controller
 		String nameCheck = showOneProduct.getName();
 		String descriptionCheck = showOneProduct.getDescription();
 		float priceCheck = showOneProduct.getPrice();
-		System.out.println("Retrieval Successful.  Information Pulled From DB:  Name: " + nameCheck + " Description: " + descriptionCheck + " Price: " + priceCheck);
+		System.out.println(GREEN_BKGRD + WHITE_TXT + " @Controller - Retrieved From Service Successful:  Information Forwarded:  Name: " + nameCheck + " Description: " + descriptionCheck + " Price: " + priceCheck + RESET_ALL);
 		
 		model.addAttribute("showOneProduct", showOneProduct);
-		List<Category> allCategoriesNot = categoryService.findProductsNotContains(showOneProduct);
-		model.addAttribute("allCategoriesNot", allCategoriesNot);
+		
+		List<Category> allCategoriesNotAdded = categoryService.findProductsNotContains(showOneProduct);
+		model.addAttribute("allCategoriesNotAdded", allCategoriesNotAdded);
+		
 		return "showOneProduct.jsp";
 	}
 	
 	// Add Category to Product
-	@PostMapping("/products/addCategoryToProduct/{productId}")
-	public String addCategoryToProduct(Model model, @PathVariable("productId") Long productId, @RequestParam(value="categoryId") Long categoryId) {
+	@PostMapping("/products/addCategoryToProduct/{showOneProductId}")
+	public String addCategoryToProduct(Model model, @PathVariable("showOneProductId") Long showOneProductId, @RequestParam(value="categoryId") Long categoryId) {
 		//find the categoryId
 		Category categoryIdReturn = categoryService.getCategoryById(categoryId);
+//		System.out.println(categoryId);
 		//use product service for adding category to the product
-		productService.addCategoryToProduct(productId, categoryIdReturn);
-		return "redirect:/products/"+productId;
+		// check if default selected
+		if(categoryId > 0) {
+			productService.addCategoryToProduct(showOneProductId, categoryIdReturn);
+			return "redirect:/products/"+showOneProductId;
+		}
+		else {
+			System.out.println(RED_BKGRD + WHITE_TXT + " ERROR:  @Controller - Default DropDown Selected.  Can not add Category to Product.class  Redirecting. " + RESET_ALL);
+			return "redirect:/products/{showOneProductId}";
+		}
 	}
 	
 	

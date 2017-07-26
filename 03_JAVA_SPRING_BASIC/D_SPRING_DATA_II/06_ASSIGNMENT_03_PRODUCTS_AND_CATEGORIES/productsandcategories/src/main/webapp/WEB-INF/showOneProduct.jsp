@@ -63,11 +63,11 @@
                         <h2>Categorys this Product Has Not Been Added Too</h2>
                         <form method="POST" action="/products/addCategoryToProduct/${showOneProduct.id}">
                             <!--name, creator version-->
-                            <!--<label>Category</label>-->
+                            <label>Category</label>
                                 <select name="categoryId" class="inputTextLeft">
                                     <option value="-1">--UnJoined Categorys--</option>
                                 	
-                                	<c:forEach items="${allCategoriesNot}" var="category">
+                                	<c:forEach items="${allCategoriesNotAdded}" var="category">
                                     	<option value="${category.id}">${category.name}</option>
                                     </c:forEach>
                                 </select>
