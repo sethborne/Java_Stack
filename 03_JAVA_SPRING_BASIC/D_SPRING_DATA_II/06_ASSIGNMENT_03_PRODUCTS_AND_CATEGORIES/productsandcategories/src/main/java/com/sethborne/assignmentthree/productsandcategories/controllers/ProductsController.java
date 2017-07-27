@@ -23,15 +23,6 @@ import com.sethborne.assignmentthree.productsandcategories.services.ProductServi
 
 public class ProductsController {
 	
-	//COLOR CLASSES
-	public static final String RESET_ALL = "\u001B[0m";
-	public static final String RED_BKGRD = "\u001B[41m";
-	public static final String GREEN_BKGRD = "\u001B[42m";
-	public static final String CYAN_BKGRD = "\u001B[46m";
-	public static final String BLUE_BKGRD = "\u001B[44m";
-	public static final String PURPLE_BKGRD = "\u001B[45m";
-	public static final String WHITE_TXT = "\u001B[37m";
-	
 	private ProductService productService;
 	private CategoryService categoryService;
 	public ProductsController(ProductService productService, CategoryService categoryService) {
@@ -70,7 +61,7 @@ public class ProductsController {
 				String nameCheck = product.getName();
 				String descriptionCheck = product.getDescription();
 				float priceCheck = product.getPrice();
-				System.out.println(GREEN_BKGRD + WHITE_TXT + " Post Successful.  Information Posted:  Name: " + nameCheck + " Description: " + descriptionCheck + " Price: " + priceCheck + RESET_ALL);
+				System.out.println(TextColor.getColor("GREEN_BKGRD") + TextColor.getColor("WHITE_TXT") + " Post Successful.  Information Posted:  Name: " + nameCheck + " Description: " + descriptionCheck + " Price: " + priceCheck + TextColor.getColor("RESET_ALL"));
 				
 				productService.createProduct(product);
 				
@@ -91,14 +82,14 @@ public class ProductsController {
 	
 	@RequestMapping("/products/{id}")
 	public String findProductById(Model model, @PathVariable("id") Long id) {
-		System.out.println(GREEN_BKGRD + WHITE_TXT + " @Controller - Sending to Service:  Id: " + id + RESET_ALL);
+		System.out.println(TextColor.getColor("GREEN_BKGRD") + TextColor.getColor("WHITE_TXT") + " @Controller - Sending to Service:  Id: " + id + TextColor.getColor("RESET_ALL"));
 		Product showOneProduct = productService.getProductById(id);
 		
 		// Check Object Coming Back - Controller
 		String nameCheck = showOneProduct.getName();
 		String descriptionCheck = showOneProduct.getDescription();
 		float priceCheck = showOneProduct.getPrice();
-		System.out.println(GREEN_BKGRD + WHITE_TXT + " @Controller - Retrieved From Service Successful:  Information Forwarded:  Name: " + nameCheck + " Description: " + descriptionCheck + " Price: " + priceCheck + RESET_ALL);
+		System.out.println(TextColor.getColor("GREEN_BKGRD") + TextColor.getColor("WHITE_TXT") + " @Controller - Retrieved From Service Successful:  Information Forwarded:  Name: " + nameCheck + " Description: " + descriptionCheck + " Price: " + priceCheck + TextColor.getColor("RESET_ALL"));
 		
 		model.addAttribute("showOneProduct", showOneProduct);
 		
@@ -121,7 +112,7 @@ public class ProductsController {
 			return "redirect:/products/"+showOneProductId;
 		}
 		else {
-			System.out.println(RED_BKGRD + WHITE_TXT + " ERROR:  @Controller - Default DropDown Selected.  Can not add Category to Product.class  Redirecting. " + RESET_ALL);
+			System.out.println(TextColor.getColor("GREEN_BKGRD") + TextColor.getColor("WHITE_TXT") + " ERROR:  @Controller - Default DropDown Selected.  Can not add Category to Product.class  Redirecting. " + TextColor.getColor("RESET_ALL"));
 			return "redirect:/products/{showOneProductId}";
 		}
 	}
