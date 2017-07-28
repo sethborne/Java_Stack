@@ -40,7 +40,8 @@
             	<div class='left'>
             		<h1>Register!</h1>
             
-		            <p><form:errors path="user.*"/></p>
+		            <p class="errors"><form:errors path="user.*"/></p>
+		            
 		            
 		            <form:form method="POST" action="/registration" modelAttribute="user">
 		                    <p>

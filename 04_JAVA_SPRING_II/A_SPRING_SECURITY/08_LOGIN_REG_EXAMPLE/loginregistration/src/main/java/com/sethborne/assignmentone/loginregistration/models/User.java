@@ -12,6 +12,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -24,12 +25,16 @@ public class User {
 	@GeneratedValue
 	private Long id;
 	
+	@Size(min=3, message="Test User")
+//	@Size(min=3)
 	private String username;
-	
+	@Size(min=5, message="Test User2")
+//	@Size(min=5)
 	private String password;
 	
 	@Transient
 	private String passwordConfirmation;
+	
 	@CreationTimestamp
 	private Date createdAt;
 	@UpdateTimestamp

@@ -1,4 +1,4 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
@@ -37,7 +37,17 @@
             <div id='top'>
             	
             	<div class='left'>
+            		<c:if test="${logoutMessage != null}">
+            			<p class="errors"><c:out value="${logoutMessage}"></c:out></p>
+            		</c:if>
+            		
             		<h1>Login</h1>
+		            
+		            
+					<c:if test="${errorMessage != null }">
+		            	<p class="errors"><c:out value="${errorMessage}"></c:out></p>
+		            </c:if>
+		            
 		            <form method="POST" action="/login">
 		                <p>
 		                    <label for="username">Username</label>
