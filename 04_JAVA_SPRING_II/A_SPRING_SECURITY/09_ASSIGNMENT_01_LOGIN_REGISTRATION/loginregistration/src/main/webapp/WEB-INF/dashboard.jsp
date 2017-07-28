@@ -16,7 +16,7 @@
             <div class="left">
                 <ul>
                     <li>
-                        <h4>Java Spring Security: Lesson: Dashboard</h4>
+                        <h4>Java Spring Data II: Spring Security: Assignment 01: Login Registration: Dashboard</h4>
                     </li>
                 </ul>
             </div>
