@@ -4,7 +4,7 @@ You need to build a login page for users to get to a dashboard. Make sure they o
 
 # Topics:
 
-● Spring Security
+Spring Security
 
 ~~● Create an app that will allow users to register~~
 
@@ -14,12 +14,12 @@ You need to build a login page for users to get to a dashboard. Make sure they o
 
 ~~● Validate passwords (matching >= 10 characters)~~
 
-● Allow users to login
+~~● Allow users to login~~
 
-● Create a dashboard page that is only accessible to logged in users
+~~● Create a dashboard page that is only accessible to logged in users~~
 
-● On user login, update last signin date.
+~~● On user login, update last signin date.~~
 
-● Allow users to logout
+~~● Allow users to logout~~
 
-● Have error messages for your users
+~~● Have error messages for your users~~
