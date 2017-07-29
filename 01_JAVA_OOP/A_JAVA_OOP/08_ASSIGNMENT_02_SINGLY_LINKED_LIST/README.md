@@ -1,12 +1,14 @@
 Singly Linked List
 In this assignment, you will create your own implementation of a singly linked list.
 
-Topics:
+# Topics:
+
 ● Java classes and objects
 
 ● Singly Linded list
 
-Tasks:
+# Tasks:
+
 ● Create a Node class with the value and next attributes
 
 ● Create a contructor method that sets the value to a given number and next to null of your Node objects
@@ -23,7 +25,8 @@ Tasks:
 
 ● Create a ListTester class to test your methods
 
-Optional Challenges:
+# Optional Challenges:
+
 ● Implement a find(int) method that will return the first node with the value in the parameter
 
 ● Implement a removeAt(int) method that will remove the node after n nodes, where n is the parameter
