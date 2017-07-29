@@ -22,6 +22,10 @@
             </div>
             <div class="right">
                 <ul>
+
+						
+			            
+					<c:if test="${currentUser.roles.contains(adminRole)}"><li><a href="/admin"><h4>To Admin Page</h4></a></li></c:if>
                     <li>
 	                    <form id="logoutForm" method="POST" action="/logout">
 			                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

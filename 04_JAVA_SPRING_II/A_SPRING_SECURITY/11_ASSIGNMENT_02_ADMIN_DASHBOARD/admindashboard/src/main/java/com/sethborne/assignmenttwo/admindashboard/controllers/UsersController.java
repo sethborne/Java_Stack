@@ -1,6 +1,7 @@
 package com.sethborne.assignmenttwo.admindashboard.controllers;
 
 import java.security.Principal;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -9,12 +10,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sethborne.assignmenttwo.admindashboard.models.Role;
 import com.sethborne.assignmenttwo.admindashboard.models.TextColor;
 import com.sethborne.assignmenttwo.admindashboard.models.User;
+import com.sethborne.assignmenttwo.admindashboard.repositories.RoleRepository;
 import com.sethborne.assignmenttwo.admindashboard.services.UserService;
 import com.sethborne.assignmenttwo.admindashboard.validator.UserValidator;
 
@@ -23,9 +27,11 @@ import com.sethborne.assignmenttwo.admindashboard.validator.UserValidator;
 public class UsersController {
 	private UserService userService;
 	private UserValidator userValidator;
-	public UsersController(UserService userService, UserValidator userValidator) {
+	private RoleRepository roleRepository;
+	public UsersController(UserService userService, UserValidator userValidator, RoleRepository roleRepository) {
 		this.userService = userService;
 		this.userValidator = userValidator;
+		this.roleRepository = roleRepository;
 	}
 	
 	@RequestMapping("/registration")
@@ -54,8 +60,10 @@ public class UsersController {
 		String lastNameCheck = user.getLastName();
 		String passwordCheck = user.getPassword();
 		System.out.println(TextColor.getColor("GREEN_BKGRD") + TextColor.getColor("WHITE_TXT") + "@Controller: Sending to Service: Username: " + usernameCheck + " First Name: " + firstNameCheck + " Last Name: " + lastNameCheck + " Password: " + passwordCheck + TextColor.getColor("RESET_ALL"));
-
-		userService.saveUserWithRoleUser(user);
+		
+		
+//		userService.saveUserWithRoleUser(user);
+		userService.saveUserWithRoleAdmin(user);
 		
 		return "redirect:/login";
 	}
@@ -75,12 +83,41 @@ public class UsersController {
 	public String dashboard(Principal principal, Model model) {
 		String username = principal.getName();
 		
-		model.addAttribute("currentUser", userService.findByUsername(username));
+		User currentUser = userService.findByUsername(username);
+		model.addAttribute("currentUser", currentUser);
 		
-//		System.out.println(userService.timeOfLastSignIn());
+		Role adminRole = userService.findRoleByName("ROLE_ADMIN");
+		model.addAttribute("adminRole", adminRole);
+
 		String timestampMostRecentLogin = userService.timeOfLastSignIn();
+//		System.out.println(userService.timeOfLastSignIn());
 		model.addAttribute("timestampMostRecentLogin", timestampMostRecentLogin);
 		
 		return "dashboard.jsp";
 	}
+	
+	@RequestMapping("/admin")
+	public String adminPage(Principal principal, Model model) {
+		// user for "session"
+		String username = principal.getName();
+		
+		// list of all users
+		List<User> allUsers = userService.getAllUsers();
+		
+		// is admin role?
+		Role adminRole = userService.findRoleByName("ROLE_ADMIN");
+//		System.out.println(adminRole);
+		
+		model.addAttribute("allUsers", allUsers);
+		model.addAttribute("adminRole", adminRole);
+		model.addAttribute("currentUser", userService.findByUsername(username));
+		return "adminPage.jsp";
+	}
+	
+	@PostMapping("/users/makeadmin/{id}")
+    public String makeUserAdmin(@PathVariable("id") Long id){
+        User user = userService.getUserById(id);
+        userService.makeUserAdmin(user);
+        return "redirect:/admin";
+    }
 }

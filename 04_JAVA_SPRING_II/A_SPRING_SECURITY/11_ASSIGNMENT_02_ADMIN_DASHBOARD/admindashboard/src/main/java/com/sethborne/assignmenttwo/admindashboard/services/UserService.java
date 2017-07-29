@@ -4,10 +4,12 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.sethborne.assignmenttwo.admindashboard.models.Role;
 import com.sethborne.assignmenttwo.admindashboard.models.TextColor;
 import com.sethborne.assignmenttwo.admindashboard.models.User;
 import com.sethborne.assignmenttwo.admindashboard.repositories.RoleRepository;
@@ -41,8 +43,37 @@ public class UserService {
 	
 	public void saveUserWithRoleAdmin(User user) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+		
+		List<Role> testPrint = roleRepository.findByName("ROLE_ADMIN");
+		System.out.println(testPrint);
+		
 		user.setRoles(roleRepository.findByName("ROLE_ADMIN"));
+		
 		userRepository.save(user);
+	}
+	
+	public List<User> getAllUsers(){
+		List<User> allUsers = (List<User>) userRepository.findAll();
+		return allUsers;
+	}
+	
+	public User getUserById(Long id){
+        return userRepository.findOne(id);
+    }
+	
+	public void makeUserAdmin(User user) {
+		user.setRoles(roleRepository.findByName("ROLE_ADMIN"));
+//		int setRoleNumVal = roleRepository.findByName("ROLE_ADMIN");
+		userRepository.save(user);
+	}
+	
+	public Role findRoleByName(String name) {
+		return roleRepository.findByName(name).get(0);
+	}
+	
+	public int findByRolesContains(Role role){
+		int roleSize = userRepository.findByRolesContains(role).size();
+		return roleSize;
 	}
 	
 	public User findByUsername(String username) {
