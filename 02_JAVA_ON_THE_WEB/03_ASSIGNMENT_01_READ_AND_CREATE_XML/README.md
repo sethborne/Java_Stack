@@ -15,42 +15,69 @@ Below is a sample web.xml file that we use to configure servlets. Your task is t
     *Guess:*
     
     Name displayed in either the browser tab or the top of the page
+    
+    **Actual**
+    
+    Name of Application
 
 ● servlet
 
     *Guess:*
     
     overall project
+    
+    **Actual**
+    
+    Servlet Information
 
 ● servlet-name
 
     *Guess:*
     
     name to call if you want to do/use/alter that piece
+    
+    **Actual**
+    
+    Name of your servlet.  It does not need to be the name of your class, although it is a common practice.
+    
 
 ● servlet-class
 
     *Guess:*
     
     this is very similar in syntax to the package of a java project.  So I'd say something similar
+    
+    **Actual**
+    
+    Location of the servlet file
 
 ● servlet-mapping
     
     *Guess:*
     
     looks like a component which contains a class and route
+    
+    **Actual**
+    
+    Mapping a servlet to a certain URL
 
 ● url-pattern
 
     *Guess:*
     
     looks like routing information to me
+    
+    **Actual**
+    
+    The pattern that you want to map a servlet too
 
 ● welcome-file
 
     *Guess:*
     
     the setter for the initial page to load
+    
+    **Actual**
 
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
