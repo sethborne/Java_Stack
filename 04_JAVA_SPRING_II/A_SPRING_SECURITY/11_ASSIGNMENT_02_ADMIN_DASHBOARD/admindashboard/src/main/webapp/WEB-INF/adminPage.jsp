@@ -69,7 +69,11 @@
 		            						<td>
 			            						<div>
 				            						<!-- This should be a form -->
-								                	<input class='btnSubmit2 btnRedHov' type="submit" value="Delete"/>
+				            						<form style="display: inline-block" action="/users/delete/${user.id}" method = "post">
+				            							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+								                		<input type="hidden" value="${user.id}"/>
+								                		<input class='btnSubmit2 btnRedHov' type="submit" value="Delete"/>
+								                	</form>
 								                </div>
 								            </td>
 								            <td>

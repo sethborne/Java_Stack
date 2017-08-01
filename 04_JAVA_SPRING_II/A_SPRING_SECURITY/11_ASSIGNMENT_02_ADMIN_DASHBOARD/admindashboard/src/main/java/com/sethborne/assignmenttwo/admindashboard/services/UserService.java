@@ -61,10 +61,25 @@ public class UserService {
         return userRepository.findOne(id);
     }
 	
+	public Boolean isAdmin() {
+		Role role = roleRepository.findByName("ROLE_ADMIN").get(0);
+		System.out.println(role.getName());
+		if(userRepository.findByRolesContains(role).size()>0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	public void makeUserAdmin(User user) {
 		user.setRoles(roleRepository.findByName("ROLE_ADMIN"));
 //		int setRoleNumVal = roleRepository.findByName("ROLE_ADMIN");
 		userRepository.save(user);
+	}
+	
+	public void deleteUser(Long id) {
+		userRepository.delete(id);
 	}
 	
 	public Role findRoleByName(String name) {

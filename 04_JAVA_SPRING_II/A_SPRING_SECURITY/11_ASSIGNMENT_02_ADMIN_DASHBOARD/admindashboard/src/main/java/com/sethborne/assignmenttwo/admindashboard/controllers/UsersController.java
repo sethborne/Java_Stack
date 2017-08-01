@@ -19,6 +19,7 @@ import com.sethborne.assignmenttwo.admindashboard.models.Role;
 import com.sethborne.assignmenttwo.admindashboard.models.TextColor;
 import com.sethborne.assignmenttwo.admindashboard.models.User;
 import com.sethborne.assignmenttwo.admindashboard.repositories.RoleRepository;
+import com.sethborne.assignmenttwo.admindashboard.repositories.UserRepository;
 import com.sethborne.assignmenttwo.admindashboard.services.UserService;
 import com.sethborne.assignmenttwo.admindashboard.validator.UserValidator;
 
@@ -28,10 +29,12 @@ public class UsersController {
 	private UserService userService;
 	private UserValidator userValidator;
 	private RoleRepository roleRepository;
-	public UsersController(UserService userService, UserValidator userValidator, RoleRepository roleRepository) {
+	private UserRepository userRepository;
+	public UsersController(UserService userService, UserValidator userValidator, RoleRepository roleRepository, UserRepository userRepository) {
 		this.userService = userService;
 		this.userValidator = userValidator;
 		this.roleRepository = roleRepository;
+		this.userRepository = userRepository;
 	}
 	
 	@RequestMapping("/registration")
@@ -61,9 +64,18 @@ public class UsersController {
 		String passwordCheck = user.getPassword();
 		System.out.println(TextColor.getColor("GREEN_BKGRD") + TextColor.getColor("WHITE_TXT") + "@Controller: Sending to Service: Username: " + usernameCheck + " First Name: " + firstNameCheck + " Last Name: " + lastNameCheck + " Password: " + passwordCheck + TextColor.getColor("RESET_ALL"));
 		
-		
-//		userService.saveUserWithRoleUser(user);
-		userService.saveUserWithRoleAdmin(user);
+		if(userService.isAdmin()) {
+			
+			System.out.println(userService.isAdmin());
+			//if admin exists then make normal user
+			System.out.println(TextColor.getColor("GREEN_BKGRD") + TextColor.getColor("WHITE_TXT") + " @Controller: Admin Exists: Giving Next User Normal Rights " + TextColor.getColor("RESET_ALL"));
+			userService.saveUserWithRoleUser(user);			
+		}
+		else {
+			//if admin doesn't exist, make admin with next
+			System.out.println(TextColor.getColor("GREEN_BKGRD") + TextColor.getColor("WHITE_TXT") + " @Controller: No Admin Exists: Giving Next User Admin Rights " + TextColor.getColor("RESET_ALL"));
+			userService.saveUserWithRoleAdmin(user);
+		}
 		
 		return "redirect:/login";
 	}
@@ -112,6 +124,12 @@ public class UsersController {
 		model.addAttribute("adminRole", adminRole);
 		model.addAttribute("currentUser", userService.findByUsername(username));
 		return "adminPage.jsp";
+	}
+	
+	@PostMapping("/users/delete/{id}")
+	public String deleteUser(@PathVariable("id") Long id) {
+		userService.deleteUser(id);
+		return "redirect:/admin";
 	}
 	
 	@PostMapping("/users/makeadmin/{id}")
