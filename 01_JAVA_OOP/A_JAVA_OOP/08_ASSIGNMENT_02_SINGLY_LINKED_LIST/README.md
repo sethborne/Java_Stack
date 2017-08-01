@@ -9,21 +9,21 @@ In this assignment, you will create your own implementation of a singly linked l
 
 # Tasks:
 
-● Create a Node class with the value and next attributes
+~~● Create a Node class with the value and next attributes~~
 
-● Create a contructor method that sets the value to a given number and next to null of your Node objects
+~~● Create a constructor method that sets the value to a given number and next to null of your Node objects~~
 
-● Create a SinglyLinkedList class with the head attribute
+~~● Create a SinglyLinkedList class with the head attribute~~
 
-● Create acontructor method that sets the head to null of your SinglyLinkedList objects
+~~● Create a constructor method that sets the head to null of your SinglyLinkedList objects~~
 
-● Create a add(int) method that will add a node to the end of your list with the value in the parameter
+~~● Create a add(int) method that will add a node to the end of your list with the value in the parameter~~
 
-● Create a remove() method that will remove a node from the end of your list
+~~● Create a remove() method that will remove a node from the end of your list~~
 
-● Create printValues() method that will print all the values of each node in the list in order
+~~● Create printValues() method that will print all the values of each node in the list in order~~
 
-● Create a ListTester class to test your methods
+~~● Create a ListTester class to test your methods~~
 
 # Optional Challenges:
 
