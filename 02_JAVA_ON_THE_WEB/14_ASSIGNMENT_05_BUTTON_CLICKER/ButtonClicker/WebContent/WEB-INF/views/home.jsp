@@ -33,12 +33,12 @@
             <hr>
             <div id="body">
                 <div id='top'>
-                    <div class='left'>
+                    <div class='center'>
                         <h3>Increment The Count by Clicking the Button Below</h3>
                         <form action="/ButtonClicker/Counters" method="POST">
 
 							<input type="hidden" name="countIncrement" value="1">
-                            <div class="btn-left">
+                            <div class="btn-center">
                                 <input class='btnSubmit btnGreen' type='submit' value='Increment Count'>
                             </div>
                         </form>
