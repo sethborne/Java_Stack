@@ -98,6 +98,12 @@
     margin: 5px 0px 15px 0px;
 }
 
+#mainContainer #body .sectionborder {
+	border: 1px solid black;
+	padding: 20px 20px;
+	margin: 0 30% 0 30%
+}
+
 #mainContainer #body form {
     margin: 0;
     padding: 0;

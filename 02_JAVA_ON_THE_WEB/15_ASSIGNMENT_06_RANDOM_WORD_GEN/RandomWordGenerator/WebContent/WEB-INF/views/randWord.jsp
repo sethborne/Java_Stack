@@ -36,11 +36,10 @@
                 <div id='top'>
                 	<div class="center">
                         	<h3>You have generated a Word <%= session.getAttribute("currCount") %> Times</h3>
-                        	<br>
-                        	<div class="sectionborder">
-                        		<h1><%= session.getAttribute("randomWord") %></h1>
-                        	</div>
-                        <form action="/RandomWordGenerator/RandomWordsController" method="POST">
+                        	<h4>
+                        		RANDOM NUMBER HERE
+                        	</h4>
+                        <form action="/RandomWord" method="POST">
 							<input type="hidden" name="countIncrement" value="1">
                             <div class="btn-center">
                                 <input class='btnSubmit btnGreen' type='submit' value='Generate'>
@@ -48,15 +47,10 @@
                         </form>
                         <br>
                         <h3>The Last Time You Generated a Word was:</h3>
-                        	<div class="sectionborder">
-                        		<h3><%= session.getAttribute("lastWordGenDate") %></h3>
-                        	</div>
-                        <form action="/RandomWordGenerator" method="POST">
-                            <div class="btn-center">
-                                <input class='btnSubmit btnGreen' type='submit' value='Reset Random Word Gen'>
-                            </div>
-                        </form>
-  
+                        	<h4>
+                        		DATE HERE
+                        	</h4>
+                        <!--  <p>You have clicked this button <%= session.getAttribute("currCount") %> times.</p> -->
                 	</div>
             	</div>
             </div>
