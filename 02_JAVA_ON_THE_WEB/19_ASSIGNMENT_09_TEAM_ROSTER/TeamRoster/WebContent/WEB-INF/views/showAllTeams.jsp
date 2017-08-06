@@ -36,14 +36,10 @@
                 <div id='top'>
                 	<div class="center">
                 		<br>
-                        	<h1>Welcome to the Team Roster App!</h1>
+                        	<h1>Welcome to the Show All Team Page!</h1>
                         	<br>
-                        	<h3>Please Click Below to Go to the Team Show Page</h3>
-                        	<h3></h3>
-                            <div class="btn-center">
-                            	<a href=""><input class='btnSubmit btnGreen' type='submit' value='Guess'></a>
-                                
-                            </div>
+                        	<h3>**Placeholder Link for Show All Players</h3>
+                        	<a href="/TeamRoster/Players"><h3>Link</h3></a>
                         <br>
                 	</div>
             	</div>

@@ -14,12 +14,12 @@
             <div id="header">
                 <div class="left">
                     <ul>
-                        <li><h4>Java on the Web - Team Roster - New Team</h4></li>
+                        <li><h4>Java on the Web - Team Roster - Add Player</h4></li>
                     </ul>
                 </div>
                 <div class="right">
                     <ul>
-                        <li><h4><a href="/TeamRoster/Teams">Show All Teams</a></h4></li>
+                        <li><h4><a href="/TeamRoster/Players">Show All Players On Team</a></h4></li>
                     </ul>
                 </div>
             </div>
@@ -28,12 +28,17 @@
                 <div id='top'>
 	                <div class="left">
                 		<br>
-                        <h3>New Team</h3>
-                        <form action="/TeamRoster/newTeam" method="POST">
-                        	<h4>Team Name:</h4>
-							<input class="inputTextLeft" type="text" name="teamName" placeholder="Enter Team Name Here" >
+                        <h3>Add New Player to Team</h3>
+                        <br>
+                        <form action="/GreatNumberGame/Guess" method="POST">
+                        	<h4>First Name:</h4>
+							<input class="inputTextLeft" type="text" name="playerFirstName" placeholder="Enter Player First Name Here" >
+							<h4>Last Name:</h4>
+							<input class="inputTextLeft" type="text" name="playerLastName" placeholder="Enter Player Last Name Here" >
+							<h4>Age:</h4>
+							<input class="inputTextLeft" type="number" name="playerAge" placeholder="Enter Player Age Here" >
 	                        <div class="btn-left">
-	                            <input class='btnSubmit btnGreen' type='submit' value='Add Team'>
+	                            <input class='btnSubmit btnGreen' type='submit' value='Add Player To Team'>
 	                        </div>
                         </form>
                         <br>

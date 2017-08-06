@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class NewTeamsController
+ * Servlet implementation class AddPlayersController
  */
-@WebServlet("/newTeam")
-public class AddTeamsController extends HttpServlet {
+@WebServlet("/addPlayer")
+public class AddPlayersController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddTeamsController() {
+    public AddPlayersController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,7 +30,7 @@ public class AddTeamsController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/newTeam.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/addPlayer.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -39,13 +39,7 @@ public class AddTeamsController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// doGet(request, response);
-		String newTeam = request.getParameter("teamName");
-		System.out.println("The Input from the New Team Page is: " + newTeam);
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/showAllTeams.jsp");
-		dispatcher.forward(request, response);
+		doGet(request, response);
 	}
 
 }
-

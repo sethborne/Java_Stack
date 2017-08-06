@@ -33,8 +33,7 @@
                         	<h3>Please Click Below to Go to the Team Show Page</h3>
                         	<h3></h3>
                             <div class="btn-center">
-                            	<a href="/TeamRoster/Teams"><input class='btnSubmit btnGreen' type='submit' value='Guess'></a>
-                                
+                            	<a href="/TeamRoster/Teams"><input class='btnSubmit btnGreen' type='submit' value='Show All Teams'></a>
                             </div>
                         <br>
                 	</div>

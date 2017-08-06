@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Random Word Generator</title>
+		<title>Team Roster - Home</title>
 		<link rel="stylesheet" href="./css/style.css">
 	</head>
 	<body>
@@ -14,32 +14,33 @@
             <div id="header">
                 <div class="left">
                     <ul>
-                        <li><h4>Java on the Web - Team Roster - New Team</h4></li>
+                        <li><h4>Java on the Web - Team Roster - Show All Player on Team</h4></li>
                     </ul>
                 </div>
                 <div class="right">
                     <ul>
                         <li><h4><a href="/TeamRoster/Teams">Show All Teams</a></h4></li>
+                        <!-- <li><h4><a href="pages/dashboard.html">To Dashboard</a></h4></li> -->
                     </ul>
                 </div>
             </div>
             <hr>
             <div id="body">
+            	<div id="body-top">
+            		<div class="left">
+            			<h3>Prototype Roster</h3>
+            		</div>
+            		<div class="right">
+            			<a href="/TeamRoster/addPlayer"><h3>Add Player To Team</h3></a>
+            		</div>
+            	</div>
                 <div id='top'>
-	                <div class="left">
+                	<div class="center">
                 		<br>
-                        <h3>New Team</h3>
-                        <form action="/TeamRoster/newTeam" method="POST">
-                        	<h4>Team Name:</h4>
-							<input class="inputTextLeft" type="text" name="teamName" placeholder="Enter Team Name Here" >
-	                        <div class="btn-left">
-	                            <input class='btnSubmit btnGreen' type='submit' value='Add Team'>
-	                        </div>
-                        </form>
-                        <br>
-                	</div>
-                	<div class="right">
+                        	<h1>Welcome to the Show All Player on Team Page!</h1>
+                        	<br>
 
+                        <br>
                 	</div>
             	</div>
             </div>
