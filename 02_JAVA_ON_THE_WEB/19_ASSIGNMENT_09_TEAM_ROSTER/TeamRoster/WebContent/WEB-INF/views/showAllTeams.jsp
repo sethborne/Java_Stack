@@ -14,7 +14,7 @@
             <div id="header">
                 <div class="left">
                     <ul>
-                        <li><h4>Java on the Web - Team Roster - Home</h4></li>
+                        <li><h4>Java on the Web - Team Roster - Team Show All Page</h4></li>
                     </ul>
                 </div>
                 <div class="right">
@@ -25,6 +25,14 @@
             </div>
             <hr>
             <div id="body">
+            	<div id="body-top">
+            		<div class="left">
+            			<h3>Prototype Roster</h3>
+            		</div>
+            		<div class="right">
+            			<a href="/TeamRoster/newTeam"><h3>New Team</h3></a>
+            		</div>
+            	</div>
                 <div id='top'>
                 	<div class="center">
                 		<br>
@@ -33,7 +41,7 @@
                         	<h3>Please Click Below to Go to the Team Show Page</h3>
                         	<h3></h3>
                             <div class="btn-center">
-                            	<a href="/TeamRoster/Teams"><input class='btnSubmit btnGreen' type='submit' value='Guess'></a>
+                            	<a href=""><input class='btnSubmit btnGreen' type='submit' value='Guess'></a>
                                 
                             </div>
                         <br>

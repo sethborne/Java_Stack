@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Team Roster - Home</title>
+		<title>Random Word Generator</title>
 		<link rel="stylesheet" href="./css/style.css">
 	</head>
 	<body>
@@ -14,29 +14,31 @@
             <div id="header">
                 <div class="left">
                     <ul>
-                        <li><h4>Java on the Web - Team Roster - Home</h4></li>
+                        <li><h4>Java on the Web - Team Roster - New Team</h4></li>
                     </ul>
                 </div>
                 <div class="right">
                     <ul>
-                        <!--<li><h4><a href="pages/dashboard.html">To Dashboard</a></h4></li>-->
+                        <li><h4><a href="/TeamRoster/Teams">Show All Teams</a></h4></li>
                     </ul>
                 </div>
             </div>
             <hr>
             <div id="body">
                 <div id='top'>
-                	<div class="center">
+	                <div class="left">
                 		<br>
-                        	<h1>Welcome to the Team Roster App!</h1>
-                        	<br>
-                        	<h3>Please Click Below to Go to the Team Show Page</h3>
-                        	<h3></h3>
-                            <div class="btn-center">
-                            	<a href="/TeamRoster/Teams"><input class='btnSubmit btnGreen' type='submit' value='Guess'></a>
-                                
-                            </div>
+                        <h3>New Team</h3>
+                        <form action="/GreatNumberGame/Guess" method="POST">
+								<input class="inputTextLeft" type="text" name="teamName" placeholder="Enter Team Name Here" >
+	                            <div class="btn-left">
+	                                <input class='btnSubmit btnGreen' type='submit' value='Add Team'>
+	                            </div>
+                        </form>
                         <br>
+                	</div>
+                	<div class="right">
+
                 	</div>
             	</div>
             </div>
