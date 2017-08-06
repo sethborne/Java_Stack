@@ -14,7 +14,7 @@
             <div id="header">
                 <div class="left">
                     <ul>
-                        <li><h4>Java on the Web - Random Word Generator</h4></li>
+                        <li><h4>Java on the Web - Random Word Generator - Home</h4></li>
                     </ul>
                 </div>
                 <div class="right">
@@ -27,28 +27,18 @@
             <div id="body">
                 <div id='top'>
                 	<div class="center">
-                        	<h3>You have generated a Word <%= session.getAttribute("currCount") %> Times</h3>
+                		<br>
+                        	<h1>Welcome to the Great Number Game!</h1>
                         	<br>
-                        	<div class="sectionborder">
-                        		<h1><%= session.getAttribute("randomWord") %></h1>
-                        	</div>
-                        <form action="/RandomWordGenerator/RandomWordsController" method="POST">
-							<input type="hidden" name="countIncrement" value="1">
+                        	<h3>I am thinking of a number between 1 and 10</h3>
+                        	<h3>Take a guess!</h3>
+                        <form action="/GreatNumberGame/Guess" method="POST">
+							<input class="inputTextCenter" type="number" name="numGuess" placeholder="1" >
                             <div class="btn-center">
-                                <input class='btnSubmit btnGreen' type='submit' value='Generate'>
+                                <input class='btnSubmit btnGreen' type='submit' value='Guess'>
                             </div>
                         </form>
                         <br>
-                        <h3>The Last Time You Generated a Word was:</h3>
-                        	<div class="sectionborder">
-                        		<h3><%= session.getAttribute("lastWordGenDate") %></h3>
-                        	</div>
-                        <form action="/RandomWordGenerator" method="POST">
-                            <div class="btn-center">
-                                <input class='btnSubmit btnGreen' type='submit' value='Reset Random Word Gen'>
-                            </div>
-                        </form>
-  
                 	</div>
             	</div>
             </div>
